@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  /* smoother gradient like original */
+  background: linear-gradient(-45deg, #ffdde1, #ee9ca7, #ffdde1, #ffc3d1);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+}
+
+/* smoother + faster animation */
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.container {
+  text-align: center;
+  transform: translateY(-10px); /* slight lift like original */
+}
+
+/* TITLE */
+h1 {
+  color: #ff4f87;
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+  animation: softShake 1.5s infinite;
+}
+
+/* more natural shake */
+@keyframes softShake {
+  0%,100% { transform: translate(0,0); }
+  20% { transform: translate(0.5px, -0.5px); }
+  40% { transform: translate(-0.5px, 0.5px); }
+  60% { transform: translate(0.5px, 0.5px); }
+  80% { transform: translate(-0.5px, -0.5px); }
+}
+
+/* GIF */
+img {
+  width: 150px;
+  margin: 15px 0 25px;
+  transition: transform 0.3s ease;
+}
+
+/* BUTTON LAYOUT */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* BUTTON BASE */
+button {
+  padding: 14px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* YES BUTTON */
+#yes {
+  background: #4CAF50;
+  color: white;
+}
+
+/* NO BUTTON */
+#no {
+  background: #e74c3c;
+  color: white;
+  position: relative;
+}
+
+/* hover effect (important for smooth feel) */
+button:hover {
+  transform: scale(1.08);
+}
+
+/* MESSAGE TEXT */
+#message {
+  margin-top: 15px;
+  color: white;
+  font-size: 0.95rem;
+  height: 20px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
